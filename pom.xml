@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>callforcode</groupId>
+    <groupId>projects</groupId>
     <artifactId>WaterLoggingDisasterPreventionSystem</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -47,12 +47,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        		<dependency>
+		<dependency>
 			<groupId>com.ibm.watson</groupId>
 			<artifactId>ibm-watson</artifactId>
-			<version>7.0.0</version>
+			<version>7.3.0</version>
 		</dependency>
-		<dependency>
+<!-- 		<dependency>
 			<groupId>com.ibm.watson</groupId>
 			<artifactId>common</artifactId>
 			<version>7.3.0</version>
@@ -62,7 +62,7 @@
 			<artifactId>visual-recognition</artifactId>
 			<version>7.3.0</version>
 		</dependency>
-		<dependency>
+	    <dependency>
 			<groupId>com.twilio.sdk</groupId>
 			<artifactId>twilio</artifactId>
 			<version>7.40.1</version>
@@ -71,7 +71,7 @@
 			<groupId>com.ibm.cloud</groupId>
 			<artifactId>sdk-core</artifactId>
 			<version>5.1.1</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
