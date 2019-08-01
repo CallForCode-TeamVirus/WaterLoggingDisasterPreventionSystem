@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,13 +17,18 @@ import com.wlpds.service.Constants;
 import com.wlpds.service.SendingNotification;
 import com.wlpds.service.VisuallyRecognisedData;
 
-
 @org.springframework.stereotype.Controller
 public class Controller {
 	public static final Logger logger = LoggerFactory.getLogger(Controller.class);
 	public static String uploadDirectory = System.getProperty("user.dir")+"/uploads"; 
 	public static boolean sendNotification = true;
 
+	@Autowired
+	VisuallyRecognisedData vdr;
+	
+	@Autowired
+	SendingNotification sn; 
+	
 	@RequestMapping("/")
 	public String UploadPage(Model model) {
 		return "uploadview";
@@ -62,10 +67,10 @@ public class Controller {
 
 	private void callServices(String path) throws Exception {
 		VisuallyRecognisedData vdr = new VisuallyRecognisedData();
-		vdr.getVisuallyRecognisedData_Java(path);
+		//vdr.getVisuallyRecognisedData_Java(path);
 
 		if(!vdr.getTextMessage().equals(Constants.Blank)) {
-			SendingNotification sn = new SendingNotification();
+			//SendingNotification sn = new SendingNotification();
 			sn.sendTextNotification(vdr.getTextMessage());
 			sendNotification = true;
 		}else {
